@@ -1,1 +1,1 @@
-package dvbgo
+package dvb
