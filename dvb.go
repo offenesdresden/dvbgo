@@ -1,18 +1,17 @@
 package dvb
 
 import (
-	"net/http"
-	"net/url"
 	"encoding/json"
 	"io/ioutil"
+	"net/http"
+	"net/url"
 	"strconv"
-	"fmt"
 )
 
 // Monitor returns a list of upcoming departures at a given stop.
 // Offset offsets information minutes into the future, 0 meaning now.
 // City defaults to Dresden if empty str, but others in the VVO network are possible as well.
-func Monitor(stop string, offset int, city string) ([]*Departure, error) {
+func Monitor(stop string, offset int, city string) (departures []*Departure, err error) {
 	if city == "" {
 		city = "Dresden"
 	}
@@ -27,25 +26,24 @@ func Monitor(stop string, offset int, city string) ([]*Departure, error) {
 
 	resp, err := http.Get(vvoURL.String())
 	if err != nil {
-		return nil, err
+		return
 	}
 
 	respData, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		return nil, err
+		return
 	}
 
 	var departuresData [][]string
 	err = json.Unmarshal(respData, &departuresData)
 	if err != nil {
-		return nil, err
+		return
 	}
 
-	var departures []*Departure
 	for _, depAttrs := range departuresData {
-		departure, _ := InitDeparture(depAttrs)
+		departure, _ := initDeparture(depAttrs)
 		departures = append(departures, departure)
 	}
 
-	return departures, nil
+	return
 }
