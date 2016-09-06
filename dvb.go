@@ -1,24 +1,18 @@
-package main
+package dvb
 
 import (
-	"fmt"
 	"net/http"
 	"net/url"
+	"encoding/json"
+	"io/ioutil"
+	"strconv"
+	"fmt"
 )
 
-func main() {
-	Monitor("Helmholtzstraße", 0, 10, "Dresden")
-}
-
-// Monitor returns monitoring information for a single stop.
-// An optional offset offsets information minutes into the future.
-// Use the limit param to limit the number of results. Unfortunately it's never
-// guaranteed that you'll get as many results as requested.
-// City defaults to Dresden, but others in the VVO are possible as well.
-func Monitor(stop string, offset int, limit int, city string) {
-	if limit == 0 {
-		limit = 10
-	}
+// Monitor returns a list of upcoming departures at a given stop.
+// Offset offsets information minutes into the future, 0 meaning now.
+// City defaults to Dresden if empty str, but others in the VVO network are possible as well.
+func Monitor(stop string, offset int, city string) ([]*Departure, error) {
 	if city == "" {
 		city = "Dresden"
 	}
@@ -27,14 +21,31 @@ func Monitor(stop string, offset int, limit int, city string) {
 	params := vvoURL.Query()
 	params.Set("ort", city)
 	params.Set("hst", stop)
-	params.Set("vz", string(offset))
-	params.Set("lim", string(limit))
+	params.Set("vz", strconv.Itoa(offset))
+	params.Set("lim", "0")
 	vvoURL.RawQuery = params.Encode()
 
 	resp, err := http.Get(vvoURL.String())
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	fmt.Println(resp.Body)
+	respData, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	var departuresData [][]string
+	err = json.Unmarshal(respData, &departuresData)
+	if err != nil {
+		return nil, err
+	}
+
+	var departures []*Departure
+	for _, depAttrs := range departuresData {
+		departure, _ := InitDeparture(depAttrs)
+		departures = append(departures, departure)
+	}
+
+	return departures, nil
 }
