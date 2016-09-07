@@ -29,8 +29,7 @@ func parseMode(modeStr string) (mode *TransportMode, err error) {
 		return TransportModes()["lift"], nil
 	}
 
-	eR, _ := regexp.Compile("^E(\\d+)")
-	if eR.Match([]byte(modeStr)) {
+	if eR, _ := regexp.Compile("^E(\\d+)"); eR.Match([]byte(modeStr)) {
 		matches := eR.FindStringSubmatch(modeStr)
 		if intMode, convErr := strconv.Atoi(matches[1]); convErr == nil {
 			switch {
@@ -42,28 +41,23 @@ func parseMode(modeStr string) (mode *TransportMode, err error) {
 		}
 	}
 
-	regioR, _ := regexp.Compile("^\\D$|^\\D\\/\\D$")
-	if regioR.Match([]byte(modeStr)) {
+	if regioR, _ := regexp.Compile("^\\D$|^\\D\\/\\D$"); regioR.Match([]byte(modeStr)) {
 		return TransportModes()["regiobus"], nil
 	}
 
-	ferryR, _ := regexp.Compile("^F")
-	if ferryR.Match([]byte(modeStr)) {
+	if ferryR, _ := regexp.Compile("^F"); ferryR.Match([]byte(modeStr)) {
 		return TransportModes()["ferry"], nil
 	}
 
-	trainR, _ := regexp.Compile("^RE|^IC|^TL|^RB|^SB|^SE|^U\\d")
-	if trainR.Match([]byte(modeStr)) {
+	if trainR, _ := regexp.Compile("^RE|^IC|^TL|^RB|^SB|^SE|^U\\d"); trainR.Match([]byte(modeStr)) {
 		return TransportModes()["train"], nil
 	}
 
-	metroR, _ := regexp.Compile("^S")
-	if metroR.Match([]byte(modeStr)) {
+	if metroR, _ := regexp.Compile("^S"); metroR.Match([]byte(modeStr)) {
 		return TransportModes()["metropolitan"], nil
 	}
 
-	astR, _ := regexp.Compile("alita")
-	if astR.Match([]byte(modeStr)) {
+	if astR, _ := regexp.Compile("alita"); astR.Match([]byte(modeStr)) {
 		return TransportModes()["ast"], nil
 	}
 
