@@ -12,7 +12,7 @@ type Departure struct {
 	RelativeTime int
 }
 
-func (dep *Departure) String() string {
+func (dep Departure) String() string {
 	return fmt.Sprintf("%s %s in %d minutes", dep.Line, dep.Direction, dep.RelativeTime)
 }
 
