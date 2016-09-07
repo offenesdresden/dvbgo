@@ -1,10 +1,10 @@
-## :aerial_tramway: dvbgo
+## 🚡 dvbgo
+
+[![Travis](https://img.shields.io/travis/kiliankoe/dvbgo.svg?style=flat-square)]()
 
 An unofficial go package giving you a few options to query a collection of publicly accessible API methods for Dresden's public transport system.
 
-Similar libs also exist for [Node](https://github.com/kiliankoe/dvbjs), [Python](https://github.com/kiliankoe/dvbpy), [Swift](https://github.com/kiliankoe/DVB) and [Ruby](https://github.com/kiliankoe/dvbrb) :blush:
-
-**dvbgo is WIP and not even close to something usable at the moment. I'm also just playing around with go using this as my advanced hello-world example and learning as I go. No pun intended.**
+Similar libs also exist for [Node](https://github.com/kiliankoe/dvbjs), [Python](https://github.com/kiliankoe/dvbpy), [Swift](https://github.com/kiliankoe/DVB) and [Ruby](https://github.com/kiliankoe/dvbrb) 😊
 
 ```go
 import "github.com/kiliankoe/dvbgo"
@@ -19,4 +19,4 @@ func main() {
 }
 ```
 
-Rest of the docs (this README) will follow as this package starts to form :upside_down:
+Rest of the docs (this README) will follow as this package starts to form 🙃
