@@ -12,12 +12,6 @@ type Departure struct {
 	RelativeTime int
 }
 
-// Mode returns the departure's mode of transport
-func (dep *Departure) Mode() {
-	// TODO: Implement me
-	panic("Not yet implemented")
-}
-
 func (dep *Departure) String() string {
 	return fmt.Sprintf("%s %s in %d minutes", dep.Line, dep.Direction, dep.RelativeTime)
 }
