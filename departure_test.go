@@ -35,3 +35,15 @@ func TestDepartureString(t *testing.T) {
 		t.Error("Expected", expected, "got", dep.String())
 	}
 }
+
+func TestDepartureMode(t *testing.T) {
+	dep := &Departure{
+		Line:         "3",
+		Direction:    "Wilder Mann",
+		RelativeTime: 5,
+	}
+	expected := "tram"
+	if mode, _ := dep.Mode(); mode.Name != expected {
+		t.Error("Expected", expected, "got", mode.Name)
+	}
+}

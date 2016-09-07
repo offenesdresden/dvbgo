@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-// Departure encapsulates info regarding the Line, Direction and relative departure time in minutes.
+// Departure encapsulates info regarding the line, direction and relative departure time in minutes.
 type Departure struct {
 	Line         string
 	Direction    string
@@ -14,6 +14,11 @@ type Departure struct {
 
 func (dep Departure) String() string {
 	return fmt.Sprintf("%s %s in %d minutes", dep.Line, dep.Direction, dep.RelativeTime)
+}
+
+// Mode returns the departure's mode of transport
+func (dep Departure) Mode() (mode *TransportMode, err error) {
+	return parseMode(dep.Line)
 }
 
 func initDeparture(attrs []string) (departure *Departure, err error) {
