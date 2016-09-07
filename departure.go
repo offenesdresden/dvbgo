@@ -17,9 +17,14 @@ func (dep Departure) String() string {
 }
 
 func initDeparture(attrs []string) (departure *Departure, err error) {
-	rel, err := strconv.Atoi(attrs[2])
-	if err != nil {
-		return
+	var rel int
+	if attrs[2] == "" {
+		rel = 0
+	} else {
+		rel, err = strconv.Atoi(attrs[2])
+		if err != nil {
+			return
+		}
 	}
 	departure = &Departure{
 		Line:         attrs[0],
