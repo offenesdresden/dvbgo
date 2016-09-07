@@ -1,6 +1,6 @@
 ## 🚡 dvbgo
 
-[![Travis](https://img.shields.io/travis/kiliankoe/dvbgo.svg?style=flat-square)]()
+[![Travis](https://img.shields.io/travis/kiliankoe/dvbgo.svg?style=flat-square)](https://travis-ci.org/kiliankoe/dvbgo)
 
 An unofficial go package giving you a few options to query a collection of publicly accessible API methods for Dresden's public transport system.
 
