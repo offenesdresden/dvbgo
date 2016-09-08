@@ -2,6 +2,7 @@ package dvb
 
 import (
 	"errors"
+	"fmt"
 	"regexp"
 	"strconv"
 )
@@ -61,7 +62,8 @@ func parseMode(modeStr string) (mode *TransportMode, err error) {
 		return TransportModes()["ast"], nil
 	}
 
-	err = errors.New("failed to parse departure identifier into transport mode")
+	errDesc := fmt.Sprintf("failed to parse departure identifier into transport mode for \"%s\"", modeStr)
+	err = errors.New(errDesc)
 	return
 }
 
