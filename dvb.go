@@ -16,6 +16,8 @@ func Monitor(stop string, offset int, city string) (departures []*Departure, err
 		city = "Dresden"
 	}
 
+	normalize(&stop)
+
 	vvoURL, _ := url.Parse("http://widgets.vvo-online.de/abfahrtsmonitor/Abfahrten.do")
 	params := vvoURL.Query()
 	params.Set("ort", city)
