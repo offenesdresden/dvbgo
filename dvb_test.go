@@ -1,6 +1,10 @@
 package dvb
 
-import "testing"
+import (
+	"testing"
+
+	_ "github.com/orchestrate-io/dvr"
+)
 
 func TestMonitor(t *testing.T) {
 	deps, err := Monitor("Postplatz", 0, "")

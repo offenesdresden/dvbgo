@@ -8,7 +8,8 @@ before_install:
   - go get golang.org/x/tools/cmd/cover
 
 script:
-  - $HOME/gopath/bin/goveralls -service=travis-ci
+  - go test -dvr.replay -covermode=count -coverprofile=profile.cov
+  - $HOME/gopath/bin/goveralls -coverprofile=profile.cov -service=travis-ci
 
 notifications:
   email:
