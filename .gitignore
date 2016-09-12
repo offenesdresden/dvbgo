@@ -71,3 +71,4 @@ crashlytics-build.properties
 fabric.properties
 .gitignore
 profile.cov
+main
