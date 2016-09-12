@@ -42,6 +42,10 @@ func parseMode(modeStr string) (mode *TransportMode, err error) {
 		}
 	}
 
+	if evR, _ := regexp.Compile("^EV\\d+"); evR.Match([]byte(modeStr)) {
+		return TransportModes()["citybus"], nil
+	}
+
 	if regioR, _ := regexp.Compile("^\\D$|^\\D\\/\\D$"); regioR.Match([]byte(modeStr)) {
 		return TransportModes()["regiobus"], nil
 	}
