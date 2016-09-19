@@ -20,3 +20,7 @@ func main() {
 ```
 
 Rest of the docs (this README) will follow as this package starts to form 🙃
+
+#### Known Usages
+
+- [alfred_dvb](https://github.com/kiliankoe/alfred_dvb)
