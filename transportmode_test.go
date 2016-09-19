@@ -13,6 +13,7 @@ var modeTests = []modePair{
 	{"59", "tram"},
 	{"E8", "tram"},
 	{"E11", "tram"},
+	{"E", "tram"},
 	{"85", "citybus"},
 	{"99", "citybus"},
 	{"E75", "citybus"},

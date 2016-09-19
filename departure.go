@@ -17,7 +17,7 @@ func (dep Departure) String() string {
 }
 
 // Mode returns the departure's mode of transport
-func (dep Departure) Mode() (mode *TransportMode, err error) {
+func (dep Departure) Mode() (mode TransportMode, err error) {
 	return parseMode(dep.Line)
 }
 
