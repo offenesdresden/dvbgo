@@ -6,6 +6,8 @@ An unofficial go package giving you a few options to query a collection of publi
 
 Similar libs also exist for [Node](https://github.com/kiliankoe/dvbjs), [Python](https://github.com/kiliankoe/dvbpy), [Swift](https://github.com/kiliankoe/DVB) and [Ruby](https://github.com/kiliankoe/dvbrb) 😊
 
+### Quick Start
+
 ```go
 import "github.com/kiliankoe/dvbgo"
 ```
@@ -19,8 +21,8 @@ func main() {
 }
 ```
 
-Rest of the docs (this README) will follow as this package starts to form 🙃
+Reading the [documentation on godoc](https://godoc.org/github.com/kiliankoe/dvbgo) will probably be of more use to see what this package can be used for than this README for now 😉 
 
-#### Known Usages
+### Known Usages
 
 - [alfred_dvb](https://github.com/kiliankoe/alfred_dvb)
