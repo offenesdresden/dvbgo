@@ -1,6 +1,6 @@
 ## 🚡 dvbgo
 
-[![godoc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat-square)](https://godoc.org/github.com/kiliankoe/dvbgo) [![Travis](https://img.shields.io/travis/kiliankoe/dvbgo.svg?style=flat-square)](https://travis-ci.org/kiliankoe/dvbgo) [![Coveralls](https://img.shields.io/coveralls/kiliankoe/dvbgo.svg?style=flat-square)](https://coveralls.io/github/kiliankoe/dvbgo)
+[![godoc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat-square)](https://godoc.org/github.com/kiliankoe/dvbgo) [![Travis](https://img.shields.io/travis/kiliankoe/dvbgo.svg?style=flat-square)](https://travis-ci.org/kiliankoe/dvbgo) [![Codecov](https://img.shields.io/codecov/c/github/kiliankoe/dvbgo.svg?style=flat-square)](https://codecov.io/gh/kiliankoe/dvbgo)
 
 An unofficial go package giving you a few options to query a collection of publicly accessible API methods for Dresden's public transport system.
 
@@ -21,7 +21,7 @@ func main() {
 }
 ```
 
-Reading the [documentation on godoc](https://godoc.org/github.com/kiliankoe/dvbgo) will probably be of more use to see what this package can be used for than this README for now 😉 
+Reading the [documentation on godoc](https://godoc.org/github.com/kiliankoe/dvbgo) will probably be of more use to see what this package can be used for than this README for now 😉
 
 ### Known Usages
 
