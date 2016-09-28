@@ -7,7 +7,7 @@ before_install:
   - go get golang.org/x/tools/cmd/cover
 
 script:
-  - go test -dvr.replay -covermode=count -coverprofile=profile.cov
+  - go test -dvr.replay -covermode=count -coverprofile=coverage.txt
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
