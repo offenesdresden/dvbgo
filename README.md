@@ -26,3 +26,4 @@ Reading the [documentation on godoc](https://godoc.org/github.com/kiliankoe/dvbg
 ### Known Usages
 
 - [alfred_dvb](https://github.com/kiliankoe/alfred_dvb)
+- [fsr/matthias](https://github.com/fsr/matthias)
