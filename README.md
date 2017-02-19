@@ -4,7 +4,7 @@
 
 An unofficial go package giving you a few options to query a collection of publicly accessible API methods for Dresden's public transport system.
 
-Similar libs also exist for [Node](https://github.com/kiliankoe/dvbjs), [Python](https://github.com/kiliankoe/dvbpy), [Swift](https://github.com/kiliankoe/DVB) and [Ruby](https://github.com/kiliankoe/dvbrb) 😊
+Want something like this for another language, look [no further](https://github.com/kiliankoe/vvo#libraries) 🙂
 
 ### Quick Start
 
